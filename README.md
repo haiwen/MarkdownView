@@ -1,5 +1,7 @@
 # MarkdownView
 
+LATEST-VERSION is [![](https://jitpack.io/v/haiwen/MarkdownView.svg)](https://jitpack.io/#haiwen/MarkdownView)
+
 Android library to display markdown text.
 
 It uses [Flexmark](https://github.com/vsch/flexmark-java) and some of its extensions.
@@ -20,7 +22,6 @@ Add the dependency:
 implementation 'com.github.tiagohm.MarkdownView:library:LATEST-VERSION'
 ```
 
-LATEST-VERSION is [![](https://jitpack.io/v/tiagohm/MarkdownView.svg)](https://jitpack.io/#tiagohm/MarkdownView)
 
 ## Usage
 
