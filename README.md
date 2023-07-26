@@ -19,7 +19,7 @@ allprojects {
 ```
 Add the dependency:
 ```gradle
-implementation 'com.github.tiagohm.MarkdownView:library:LATEST-VERSION'
+implementation 'com.github.haiwen.MarkdownView:LATEST-VERSION'
 ```
 
 
