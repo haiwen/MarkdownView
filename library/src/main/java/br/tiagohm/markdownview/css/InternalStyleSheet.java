@@ -1,8 +1,7 @@
 package br.tiagohm.markdownview.css;
 
 import android.text.TextUtils;
-
-import com.orhanobut.logger.Logger;
+import android.util.Log;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -156,7 +155,7 @@ public class InternalStyleSheet implements StyleSheet {
                     String value = nameAndValue[1].trim();
                     getCurrentMediaQuery().get(selector).put(name, value);
                 } else {
-                    Logger.e("invalid css: '" + declaration + "' in selector: " + selector);
+                    Log.e(InternalStyleSheet.class.getName(), "invalid css: '" + declaration + "' in selector: " + selector);
                 }
             }
         }
