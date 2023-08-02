@@ -2,6 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'maven-publish'
 
 group = 'com.github.haiwen'
+def libVersion = "0.19.3"
 
 android {
     compileSdkVersion 33
@@ -10,7 +11,7 @@ android {
         minSdkVersion 16
         targetSdkVersion 31
         versionCode 1
-        versionName "0.19.2"
+        versionName libVersion
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
 
@@ -32,6 +33,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+
     //Flexmark
     implementation 'com.vladsch.flexmark:flexmark:0.28.32'
     implementation 'com.vladsch.flexmark:flexmark-ext-tables:0.28.32'
@@ -42,8 +44,6 @@ dependencies {
     implementation 'com.vladsch.flexmark:flexmark-ext-superscript:0.28.32'
     implementation 'com.vladsch.flexmark:flexmark-ext-footnotes:0.28.32'
     implementation 'com.vladsch.flexmark:flexmark-ext-attributes:0.28.32'
-    //Logger
-//    implementation 'com.orhanobut:logger:1.15'
 }
 
 afterEvaluate {
@@ -53,7 +53,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.github.haiwen'
                 artifactId = 'MarkdownView'
-                version = '0.19.2'
+                version = libVersion
             }
         }
     }
