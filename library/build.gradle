@@ -1,16 +1,19 @@
-apply plugin: 'com.android.library'
-apply plugin: 'maven-publish'
+plugins {
+    id 'com.android.library'
+    id 'maven-publish'
+}
 
-group = 'com.github.haiwen'
-def libVersion = "0.19.3"
+def group = 'com.github.haiwen'
+def libVersion = "0.19.4"
+def libCode = 4
 
 android {
-    compileSdkVersion 33
+    compileSdkVersion rootProject.ext.compileSdkVersion
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 31
-        versionCode 1
+        minSdk rootProject.ext.minSdkVersion
+        targetSdk rootProject.ext.targetSdkVersion
+        versionCode libCode
         versionName libVersion
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
@@ -21,6 +24,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
 }
 
@@ -51,7 +59,7 @@ afterEvaluate {
         publications {
             release(MavenPublication) {
                 from components.release
-                groupId = 'com.github.haiwen'
+                groupId = group
                 artifactId = 'MarkdownView'
                 version = libVersion
             }
